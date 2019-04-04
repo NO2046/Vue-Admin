@@ -1,0 +1,30 @@
+.layout-container{
+  height: 100%;
+  display: flex;
+  .right-container{
+    flex-grow: 1;
+    margin-left: 64px;
+  }
+}
+.sidebar-container{
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .el-menu-vertical:not(.el-menu--collapse) {
+    width: 180px;
+  }
+  .el-menu-vertical{
+    height: 100%;
+    text-align: left;
+  }
+  .el-submenu .el-menu-item{
+    min-width: 0;
+  }
+}
+
+.layout-container.openSidebar{
+  .right-container{
+    margin-left: 180px;
+  }
+}
