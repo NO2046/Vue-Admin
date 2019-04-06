@@ -24,6 +24,5 @@ const app = {
     }
   }
 }
-console.log('app.state.sidebar.opened')
-console.log(app.state.sidebar.opened)
+
 export default app

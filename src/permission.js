@@ -16,10 +16,8 @@ router.beforeEach((to ,from, next) => {
     }
   }else{
     if(to.path === '/login'){
-      debugger
       next()
     }else{
-      debugger
       next(`/login?redirect=${to.path}`)
       NProgress.done() 
     }

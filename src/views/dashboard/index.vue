@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <h2 @click='$router.push("/test")'>dashboard</h2>
+    <h2 @click='$router.push("/test")'>dashboard2</h2>
     <router-link :to="{name:'test2',params:{a:'12'}}">to test</router-link>
   </div>
 </template>

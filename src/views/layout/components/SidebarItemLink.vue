@@ -1,15 +1,15 @@
 <template>
-  <component v-bind="attrObj()">
+  <component v-bind="attrObj(to)">
     <slot/>
   </component>
 </template>
 
 <script>
 
-import isOuterLink from '@/utils/index'
+import { isOuterLink } from '@/utils/index'
 
 export default {
-  name: 'AppLink',
+  name: 'SidebarItemLink',
   props:{
     to:{
       type: String,

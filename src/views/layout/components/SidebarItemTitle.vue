@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AppItem',
+  name: 'SidebarItemTitle',
   functional: true,
   props:{
     title:{
