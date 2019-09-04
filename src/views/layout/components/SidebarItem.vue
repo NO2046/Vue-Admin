@@ -1,4 +1,3 @@
-/* eslint-disable no-unreachable */
 <template>
   <div v-if="!item.hidden && item.children" class="sidebar-item-container">
     <template v-if="hasOneShowingChild(item.children)">

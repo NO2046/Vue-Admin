@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script>``
+<script>
 const onClick = () => {
   console.log('outside')``
 }
@@ -14,8 +14,8 @@ export default {
   name: 'fruit',
   methods: {
     onClick(){
-      // console.log('inside`')
-      // onClick();
+      console.log('inside`')
+      onClick();
       return () => {
         console.log(1)
       }

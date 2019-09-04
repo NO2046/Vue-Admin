@@ -1,12 +1,10 @@
 <template>
   <div :class="classes">
     <el-menu
-      @open="onOpen"
-      @close="onClose"     
-      :default-active="activeIndex"
-      :collapse="isClose"
+      :collapse="isClosed"
       class="el-menu-vertical"     
-      >
+      :default-active="$route.path"   
+    >
       <sidebar-item v-for="route in routes" :item="route" :base-path="route.path" :key="route.path"></sidebar-item>
     </el-menu>
   </div>
@@ -19,16 +17,11 @@ import SidebarItem from './components/SidebarItem';
 export default {
   name: 'AppSidebar',
   components: { SidebarItem },
-  data(){
-    return {
-      activeIndex:'1'
-    }
-  },
   computed:{
     ...mapGetters([
       'sidebar'
     ]),
-    isClose(){
+    isClosed(){
       return !this.sidebar.opened
     },
     routes(){
@@ -37,16 +30,8 @@ export default {
     classes(){
       return {
         'sidebar-container': true,
-        'isClose': this.isClose
+        'isClosed': this.isClosed
       }
-    }
-  },
-  methods:{
-    onOpen(){
-
-    },
-    onClose(){
-
     }
   }
 };

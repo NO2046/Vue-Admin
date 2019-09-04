@@ -33,6 +33,7 @@ export default {
       if (first && first.name !== 'dashboard') {
         matched = [{ path: '/dashboard', meta: { title: 'Dashboard' } }].concat(matched);
       }
+      // 可通过
       this.levelList = matched.filter( item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
     },
 

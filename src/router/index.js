@@ -31,7 +31,21 @@ export const constantRouterMap = [
         path: 'test1/:a',
         name: 'test1',
         meta:{title:'Test1'},
-        component: () => import('@/views/test')
+        component: () => import('@/views/test'),
+        children:[
+          {
+            path: 'test1/:a',
+            name: 'test1',
+            meta:{title:'Test1'},
+            component: () => import('@/views/test')
+          },
+          {
+            path: 'test2/:a',
+            name: 'test2',
+            meta:{title:'Test2'},
+            component: () => import('@/views/test')
+          }
+        ]
       },
       {
         path: 'test2/:a',

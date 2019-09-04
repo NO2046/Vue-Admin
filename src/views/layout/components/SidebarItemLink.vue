@@ -1,5 +1,5 @@
 <template>
-  <component v-bind="attrObj(to)">
+  <component v-bind="attrObj(to)" :is="componentName">
     <slot/>
   </component>
 </template>
@@ -10,6 +10,11 @@ import { isOuterLink } from '@/utils/index'
 
 export default {
   name: 'SidebarItemLink',
+  data(){
+    return {
+      componentName: ''
+    }
+  },
   props:{
     to:{
       type: String,
@@ -19,15 +24,15 @@ export default {
   methods:{
     attrObj(to){
       if(isOuterLink(to)){
+        this.componentName = 'a'
         return {
-          is: 'a',
           href: to,
           target: '_blank',
         }
       }else{
+        this.componentName = 'router-link'
         return {
-          to,
-          is: 'router-link',
+          to
         }
       }
     }
